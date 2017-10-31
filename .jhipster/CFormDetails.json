@@ -1,0 +1,72 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "placeOfBirth",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "arrivedFrom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "departingTo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passportNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passportExpirationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "employedinIndia",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "passportIssuedAuthority",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateOfArrivalInIndia",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "placeOfIssue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "visaType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "visaNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "visaEffectiveDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "visaExpiryDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "visaIssuedAuthorityName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171027051921",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "cform_details",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

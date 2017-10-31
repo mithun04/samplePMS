@@ -1,0 +1,125 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCFormDetailsLabel" jhiTranslate="samplePmsApp.cFormDetails.home.createOrEditLabel">Create or edit a C Form Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!cFormDetails.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="cFormDetails.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.dateOfBirth" for="field_dateOfBirth">Date Of Birth</label>
+            <div class="input-group">
+                <input id="field_dateOfBirth" type="text" class="form-control" name="dateOfBirth" ngbDatepicker  #dateOfBirthDp="ngbDatepicker" [(ngModel)]="cFormDetails.dateOfBirth"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="dateOfBirthDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.placeOfBirth" for="field_placeOfBirth">Place Of Birth</label>
+            <input type="text" class="form-control" name="placeOfBirth" id="field_placeOfBirth"
+                [(ngModel)]="cFormDetails.placeOfBirth"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.arrivedFrom" for="field_arrivedFrom">Arrived From</label>
+            <input type="text" class="form-control" name="arrivedFrom" id="field_arrivedFrom"
+                [(ngModel)]="cFormDetails.arrivedFrom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.departingTo" for="field_departingTo">Departing To</label>
+            <input type="text" class="form-control" name="departingTo" id="field_departingTo"
+                [(ngModel)]="cFormDetails.departingTo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.passportNo" for="field_passportNo">Passport No</label>
+            <input type="text" class="form-control" name="passportNo" id="field_passportNo"
+                [(ngModel)]="cFormDetails.passportNo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.passportExpirationDate" for="field_passportExpirationDate">Passport Expiration Date</label>
+            <div class="input-group">
+                <input id="field_passportExpirationDate" type="text" class="form-control" name="passportExpirationDate" ngbDatepicker  #passportExpirationDateDp="ngbDatepicker" [(ngModel)]="cFormDetails.passportExpirationDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="passportExpirationDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.employedinIndia" for="field_employedinIndia">Employedin India</label>
+            <input type="checkbox" class="form-control" name="employedinIndia" id="field_employedinIndia"
+                [(ngModel)]="cFormDetails.employedinIndia"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.passportIssuedAuthority" for="field_passportIssuedAuthority">Passport Issued Authority</label>
+            <input type="text" class="form-control" name="passportIssuedAuthority" id="field_passportIssuedAuthority"
+                [(ngModel)]="cFormDetails.passportIssuedAuthority"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.dateOfArrivalInIndia" for="field_dateOfArrivalInIndia">Date Of Arrival In India</label>
+            <div class="input-group">
+                <input id="field_dateOfArrivalInIndia" type="text" class="form-control" name="dateOfArrivalInIndia" ngbDatepicker  #dateOfArrivalInIndiaDp="ngbDatepicker" [(ngModel)]="cFormDetails.dateOfArrivalInIndia"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="dateOfArrivalInIndiaDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.placeOfIssue" for="field_placeOfIssue">Place Of Issue</label>
+            <input type="text" class="form-control" name="placeOfIssue" id="field_placeOfIssue"
+                [(ngModel)]="cFormDetails.placeOfIssue"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.visaType" for="field_visaType">Visa Type</label>
+            <input type="text" class="form-control" name="visaType" id="field_visaType"
+                [(ngModel)]="cFormDetails.visaType"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.visaNo" for="field_visaNo">Visa No</label>
+            <input type="text" class="form-control" name="visaNo" id="field_visaNo"
+                [(ngModel)]="cFormDetails.visaNo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.visaEffectiveDate" for="field_visaEffectiveDate">Visa Effective Date</label>
+            <div class="input-group">
+                <input id="field_visaEffectiveDate" type="text" class="form-control" name="visaEffectiveDate" ngbDatepicker  #visaEffectiveDateDp="ngbDatepicker" [(ngModel)]="cFormDetails.visaEffectiveDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="visaEffectiveDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.visaExpiryDate" for="field_visaExpiryDate">Visa Expiry Date</label>
+            <div class="input-group">
+                <input id="field_visaExpiryDate" type="text" class="form-control" name="visaExpiryDate" ngbDatepicker  #visaExpiryDateDp="ngbDatepicker" [(ngModel)]="cFormDetails.visaExpiryDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="visaExpiryDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.cFormDetails.visaIssuedAuthorityName" for="field_visaIssuedAuthorityName">Visa Issued Authority Name</label>
+            <input type="text" class="form-control" name="visaIssuedAuthorityName" id="field_visaIssuedAuthorityName"
+                [(ngModel)]="cFormDetails.visaIssuedAuthorityName"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,100 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCustomerLabel" jhiTranslate="samplePmsApp.customer.home.createOrEditLabel">Create or edit a Customer</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!customer.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="customer.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.crmContactId" for="field_crmContactId">Crm Contact Id</label>
+            <input type="text" class="form-control" name="crmContactId" id="field_crmContactId"
+                [(ngModel)]="customer.crmContactId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.leadId" for="field_leadId">Lead Id</label>
+            <input type="text" class="form-control" name="leadId" id="field_leadId"
+                [(ngModel)]="customer.leadId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.gstNumber" for="field_gstNumber">Gst Number</label>
+            <input type="text" class="form-control" name="gstNumber" id="field_gstNumber"
+                [(ngModel)]="customer.gstNumber"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                [(ngModel)]="customer.title"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.first_name" for="field_first_name">First Name</label>
+            <input type="text" class="form-control" name="first_name" id="field_first_name"
+                [(ngModel)]="customer.first_name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.last_name" for="field_last_name">Last Name</label>
+            <input type="text" class="form-control" name="last_name" id="field_last_name"
+                [(ngModel)]="customer.last_name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.gender" for="field_gender">Gender</label>
+            <input type="text" class="form-control" name="gender" id="field_gender"
+                [(ngModel)]="customer.gender"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.telephone_no" for="field_telephone_no">Telephone No</label>
+            <input type="text" class="form-control" name="telephone_no" id="field_telephone_no"
+                [(ngModel)]="customer.telephone_no"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.mobile_no" for="field_mobile_no">Mobile No</label>
+            <input type="text" class="form-control" name="mobile_no" id="field_mobile_no"
+                [(ngModel)]="customer.mobile_no"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.email_id" for="field_email_id">Email Id</label>
+            <input type="text" class="form-control" name="email_id" id="field_email_id"
+                [(ngModel)]="customer.email_id"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                [(ngModel)]="customer.address"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                [(ngModel)]="customer.city"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.province" for="field_province">Province</label>
+            <input type="text" class="form-control" name="province" id="field_province"
+                [(ngModel)]="customer.province"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.country" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                [(ngModel)]="customer.country"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="samplePmsApp.customer.postal_code" for="field_postal_code">Postal Code</label>
+            <input type="text" class="form-control" name="postal_code" id="field_postal_code"
+                [(ngModel)]="customer.postal_code"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

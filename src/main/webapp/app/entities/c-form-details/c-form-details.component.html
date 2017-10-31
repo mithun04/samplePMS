@@ -1,0 +1,105 @@
+<div>
+    <h2>
+        <span jhiTranslate="samplePmsApp.cFormDetails.home.title">C Form Details</span>
+        <button class="btn btn-primary float-right jh-create-entity create-c-form-details" [routerLink]="['/', { outlets: { popup: ['c-form-details-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="samplePmsApp.cFormDetails.home.createLabel">
+            Create new C Form Details
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'samplePmsApp.cFormDetails.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="cFormDetails">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dateOfBirth"><span jhiTranslate="samplePmsApp.cFormDetails.dateOfBirth">Date Of Birth</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="placeOfBirth"><span jhiTranslate="samplePmsApp.cFormDetails.placeOfBirth">Place Of Birth</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="arrivedFrom"><span jhiTranslate="samplePmsApp.cFormDetails.arrivedFrom">Arrived From</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="departingTo"><span jhiTranslate="samplePmsApp.cFormDetails.departingTo">Departing To</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="passportNo"><span jhiTranslate="samplePmsApp.cFormDetails.passportNo">Passport No</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="passportExpirationDate"><span jhiTranslate="samplePmsApp.cFormDetails.passportExpirationDate">Passport Expiration Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="employedinIndia"><span jhiTranslate="samplePmsApp.cFormDetails.employedinIndia">Employedin India</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="passportIssuedAuthority"><span jhiTranslate="samplePmsApp.cFormDetails.passportIssuedAuthority">Passport Issued Authority</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dateOfArrivalInIndia"><span jhiTranslate="samplePmsApp.cFormDetails.dateOfArrivalInIndia">Date Of Arrival In India</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="placeOfIssue"><span jhiTranslate="samplePmsApp.cFormDetails.placeOfIssue">Place Of Issue</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="visaType"><span jhiTranslate="samplePmsApp.cFormDetails.visaType">Visa Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="visaNo"><span jhiTranslate="samplePmsApp.cFormDetails.visaNo">Visa No</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="visaEffectiveDate"><span jhiTranslate="samplePmsApp.cFormDetails.visaEffectiveDate">Visa Effective Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="visaExpiryDate"><span jhiTranslate="samplePmsApp.cFormDetails.visaExpiryDate">Visa Expiry Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="visaIssuedAuthorityName"><span jhiTranslate="samplePmsApp.cFormDetails.visaIssuedAuthorityName">Visa Issued Authority Name</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cFormDetails of cFormDetails ;trackBy: trackId">
+                <td><a [routerLink]="['../c-form-details', cFormDetails.id ]">{{cFormDetails.id}}</a></td>
+                <td>{{cFormDetails.dateOfBirth | date:'mediumDate'}}</td>
+                <td>{{cFormDetails.placeOfBirth}}</td>
+                <td>{{cFormDetails.arrivedFrom}}</td>
+                <td>{{cFormDetails.departingTo}}</td>
+                <td>{{cFormDetails.passportNo}}</td>
+                <td>{{cFormDetails.passportExpirationDate | date:'mediumDate'}}</td>
+                <td>{{cFormDetails.employedinIndia}}</td>
+                <td>{{cFormDetails.passportIssuedAuthority}}</td>
+                <td>{{cFormDetails.dateOfArrivalInIndia | date:'mediumDate'}}</td>
+                <td>{{cFormDetails.placeOfIssue}}</td>
+                <td>{{cFormDetails.visaType}}</td>
+                <td>{{cFormDetails.visaNo}}</td>
+                <td>{{cFormDetails.visaEffectiveDate | date:'mediumDate'}}</td>
+                <td>{{cFormDetails.visaExpiryDate | date:'mediumDate'}}</td>
+                <td>{{cFormDetails.visaIssuedAuthorityName}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../c-form-details', cFormDetails.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'c-form-details/'+ cFormDetails.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'c-form-details/'+ cFormDetails.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="cFormDetails && cFormDetails.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

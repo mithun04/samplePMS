@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity CFormDetails.
+    -->
+    <changeSet id="20171027051921-1" author="jhipster">
+        <createTable tableName="cform_details">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="date_of_birth" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="place_of_birth" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="arrived_from" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="departing_to" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="passport_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="passport_expiration_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="employedin_india" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="passport_issued_authority" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="date_of_arrival_in_india" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="place_of_issue" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="visa_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="visa_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="visa_effective_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="visa_expiry_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="visa_issued_authority_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

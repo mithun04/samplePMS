@@ -1,0 +1,36 @@
+{
+    "samplePmsApp": {
+        "cFormDetails" : {
+            "home": {
+                "title": "C Form Details",
+                "createLabel": "Create a new C Form Details",
+                "createOrEditLabel": "Create or edit a C Form Details",
+                "search": "Search for C Form Details"
+            },
+            "created": "A new C Form Details is created with identifier {{ param }}",
+            "updated": "A C Form Details is updated with identifier {{ param }}",
+            "deleted": "A C Form Details is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete C Form Details {{ id }}?"
+            },
+            "detail": {
+                "title": "C Form Details"
+            },
+            "dateOfBirth": "Date Of Birth",
+            "placeOfBirth": "Place Of Birth",
+            "arrivedFrom": "Arrived From",
+            "departingTo": "Departing To",
+            "passportNo": "Passport No",
+            "passportExpirationDate": "Passport Expiration Date",
+            "employedinIndia": "Employedin India",
+            "passportIssuedAuthority": "Passport Issued Authority",
+            "dateOfArrivalInIndia": "Date Of Arrival In India",
+            "placeOfIssue": "Place Of Issue",
+            "visaType": "Visa Type",
+            "visaNo": "Visa No",
+            "visaEffectiveDate": "Visa Effective Date",
+            "visaExpiryDate": "Visa Expiry Date",
+            "visaIssuedAuthorityName": "Visa Issued Authority Name"
+        }
+    }
+}

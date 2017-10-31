@@ -1,0 +1,81 @@
+
+<div *ngIf="customer">
+    <h2><span jhiTranslate="samplePmsApp.customer.detail.title">Customer</span> {{customer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="samplePmsApp.customer.crmContactId">Crm Contact Id</span></dt>
+        <dd>
+            <span>{{customer.crmContactId}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.leadId">Lead Id</span></dt>
+        <dd>
+            <span>{{customer.leadId}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.gstNumber">Gst Number</span></dt>
+        <dd>
+            <span>{{customer.gstNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.title">Title</span></dt>
+        <dd>
+            <span>{{customer.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.first_name">First Name</span></dt>
+        <dd>
+            <span>{{customer.first_name}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.last_name">Last Name</span></dt>
+        <dd>
+            <span>{{customer.last_name}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.gender">Gender</span></dt>
+        <dd>
+            <span>{{customer.gender}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.telephone_no">Telephone No</span></dt>
+        <dd>
+            <span>{{customer.telephone_no}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.mobile_no">Mobile No</span></dt>
+        <dd>
+            <span>{{customer.mobile_no}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.email_id">Email Id</span></dt>
+        <dd>
+            <span>{{customer.email_id}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.address">Address</span></dt>
+        <dd>
+            <span>{{customer.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.city">City</span></dt>
+        <dd>
+            <span>{{customer.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.province">Province</span></dt>
+        <dd>
+            <span>{{customer.province}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.country">Country</span></dt>
+        <dd>
+            <span>{{customer.country}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.customer.postal_code">Postal Code</span></dt>
+        <dd>
+            <span>{{customer.postal_code}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'customer/'+ customer.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

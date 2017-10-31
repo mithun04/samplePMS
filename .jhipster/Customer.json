@@ -1,0 +1,72 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "crmContactId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leadId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gstNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "first_name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "last_name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone_no",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobile_no",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email_id",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "province",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postal_code",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171027060150",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "customer",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

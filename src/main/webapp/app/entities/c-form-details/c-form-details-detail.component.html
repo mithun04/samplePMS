@@ -1,0 +1,81 @@
+
+<div *ngIf="cFormDetails">
+    <h2><span jhiTranslate="samplePmsApp.cFormDetails.detail.title">C Form Details</span> {{cFormDetails.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+            <span>{{cFormDetails.dateOfBirth | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.placeOfBirth">Place Of Birth</span></dt>
+        <dd>
+            <span>{{cFormDetails.placeOfBirth}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.arrivedFrom">Arrived From</span></dt>
+        <dd>
+            <span>{{cFormDetails.arrivedFrom}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.departingTo">Departing To</span></dt>
+        <dd>
+            <span>{{cFormDetails.departingTo}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.passportNo">Passport No</span></dt>
+        <dd>
+            <span>{{cFormDetails.passportNo}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.passportExpirationDate">Passport Expiration Date</span></dt>
+        <dd>
+            <span>{{cFormDetails.passportExpirationDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.employedinIndia">Employedin India</span></dt>
+        <dd>
+            <span>{{cFormDetails.employedinIndia}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.passportIssuedAuthority">Passport Issued Authority</span></dt>
+        <dd>
+            <span>{{cFormDetails.passportIssuedAuthority}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.dateOfArrivalInIndia">Date Of Arrival In India</span></dt>
+        <dd>
+            <span>{{cFormDetails.dateOfArrivalInIndia | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.placeOfIssue">Place Of Issue</span></dt>
+        <dd>
+            <span>{{cFormDetails.placeOfIssue}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.visaType">Visa Type</span></dt>
+        <dd>
+            <span>{{cFormDetails.visaType}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.visaNo">Visa No</span></dt>
+        <dd>
+            <span>{{cFormDetails.visaNo}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.visaEffectiveDate">Visa Effective Date</span></dt>
+        <dd>
+            <span>{{cFormDetails.visaEffectiveDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.visaExpiryDate">Visa Expiry Date</span></dt>
+        <dd>
+            <span>{{cFormDetails.visaExpiryDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="samplePmsApp.cFormDetails.visaIssuedAuthorityName">Visa Issued Authority Name</span></dt>
+        <dd>
+            <span>{{cFormDetails.visaIssuedAuthorityName}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'c-form-details/'+ cFormDetails.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
